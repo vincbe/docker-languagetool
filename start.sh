@@ -16,4 +16,4 @@ Xmx=${Java_Xmx:-512m}
 
 echo "Starting Java with -Xms$Xms -Xmx$Xmx"
 
-java -Xms$Xms -Xmx$Xmx -cp languagetool-server.jar org.languagetool.server.HTTPServer --port 8010 --public --allow-origin '*' --config config.properties
+java -Xms$Xms -Xmx$Xmx -cp languagetool-server.jar org.languagetool.server.HTTPServer --port ${PORT} --public --allow-origin '*' --config config.properties

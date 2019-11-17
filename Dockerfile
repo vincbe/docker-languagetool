@@ -1,4 +1,5 @@
 ARG LANGUAGETOOL_VERSION=4.7
+ARG PORT=8080
 
 FROM debian:stretch as build
 
@@ -39,6 +40,7 @@ RUN apk update \
         gcompat
 
 ARG LANGUAGETOOL_VERSION
+ARG PORT
 
 COPY --from=build /dist .
 
@@ -56,4 +58,4 @@ USER languagetool
 
 CMD [ "bash", "start.sh" ]
 
-EXPOSE 8010
+EXPOSE ${PORT}
